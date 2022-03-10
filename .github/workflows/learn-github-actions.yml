@@ -1,9 +1,18 @@
 name: download-data-json
 on: [push]
 jobs:
-  download-file:
+  download-base-information:
+    runs-on: ubuntu-latest
+    steps:
+      - run: wget https://data.cdc.gov/data.json
+      - run: cat data.json
+  download-base-information:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - run: wget https://data.cdc.gov/data.json
-      - run: cat data.json
+      - uses: actions/setup-python@v2
+        with:
+	    python-version: '3.9'
+	    cache: 'pip'
+      - run: pip install -r requirements.txt
+      - run: python P0_filter_NCHS_data.py
