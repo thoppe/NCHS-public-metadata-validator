@@ -6,13 +6,13 @@ jobs:
     steps:
       - run: wget https://data.cdc.gov/data.json
       - run: cat data.json
-  download-base-information:
+  parse-info:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-python@v2
         with:
-            python-version: '3.9'
-            cache: 'pip'
+          python-version: '3.9'
+          cache: 'pip'
       - run: pip install -r requirements.txt
       - run: python P0_filter_NCHS_data.py
