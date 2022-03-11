@@ -1,16 +1,9 @@
 name: download-data-json
 on: [push]
 jobs:
-  download-base-information:
-    runs-on: ubuntu-latest
-    steps:
-      - run: wget https://data.cdc.gov/data.json
-      - run: cat data.json
   parse-info:
     runs-on: ubuntu-latest
     steps:
-      - name: Download the latest metadata
-        run: wget https://data.cdc.gov/data.json
       - name: Checkout the repo
         uses: actions/checkout@v3
       - name: Install python
@@ -20,5 +13,7 @@ jobs:
           cache: 'pip'
       - name: Install the requirements
         run: pip install -r requirements.txt
-      - name: Filter for NCHS only datasets
-        run: python P0_filter_NCHS_data.py
+      - name: Download metadata and filter for NCHS only datasets
+        run: |
+	 wget https://data.cdc.gov/data.json
+         python P0_filter_NCHS_data.py
