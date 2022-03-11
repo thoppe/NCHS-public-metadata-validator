@@ -1,20 +1,32 @@
-'''
-Filters metadata from data.cdc.gov so only NCHS remains,
-returns a nicely formated CSV
-'''
+"""
+Filters metadata from data.cdc.gov so only NCHS datasets remain,
+returns a nicely formated CSV. Saves the dataframe to a file for
+future analysis.
+"""
 
 import json
+from pathlib import Path
 import pandas as pd
 
-f_src = 'data.json'
 
+# Presume data.json exists already (should be downloaded from github action)
+f_src = Path("data.json")
+assert f_src.exists()
+
+# Parse the JSON file and keep only the datasets
 JS = json.load(open(f_src))
-df = pd.DataFrame(JS['dataset'])
-df = df.set_index('landingPage')
+df = pd.DataFrame(JS["dataset"])
 
-df['category'] = df['theme'].fillna("x").apply(lambda x:x[0])
+# Set the index on the landingPage
+df = df.set_index("landingPage")
 
-idx = df['category'] == "NCHS"
+# Some datasets may not have a "theme" so fill them in with blanks
+# The category (internally theme) is a list with a single item
+# turn this into a single text field
+df["category"] = df["theme"].fillna(" ").apply(lambda x: x[0])
+
+# Only keep the datasets that belong to NCHS
+idx = df["category"] == "NCHS"
 df = df[idx]
 
-print(df)
+df.to_csv("NCHS_raw_datasets.csv")

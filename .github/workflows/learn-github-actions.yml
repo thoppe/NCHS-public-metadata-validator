@@ -9,12 +9,16 @@ jobs:
   parse-info:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-python@v2
+      - name: Download the latest metadata
+        run: wget https://data.cdc.gov/data.json
+      - name: Checkout the repo
+        uses: actions/checkout@v3
+      - name: Install python and the requirements
+        uses: actions/setup-python@v2
         with:
           python-version: '3.9'
           cache: 'pip'
-      - run: pip install -r requirements.txt
-      - run: wget https://data.cdc.gov/data.json
-      - run: ls -lR      
-      - run: python P0_filter_NCHS_data.py
+
+        run: pip install -r requirements.txt
+      - name: Filter for NCHS only datasets
+        run: python P0_filter_NCHS_data.py
