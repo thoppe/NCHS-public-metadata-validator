@@ -15,5 +15,6 @@ jobs:
           python-version: '3.9'
           cache: 'pip'
       - run: pip install -r requirements.txt
-      - run: ls -lR
+      - run: wget https://data.cdc.gov/data.json
+      - run: ls -lR      
       - run: python P0_filter_NCHS_data.py
