@@ -13,12 +13,12 @@ jobs:
         run: wget https://data.cdc.gov/data.json
       - name: Checkout the repo
         uses: actions/checkout@v3
-      - name: Install python and the requirements
+      - name: Install python
         uses: actions/setup-python@v2
         with:
           python-version: '3.9'
           cache: 'pip'
-
+      - name: Install the requirements
         run: pip install -r requirements.txt
       - name: Filter for NCHS only datasets
         run: python P0_filter_NCHS_data.py
