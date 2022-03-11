@@ -19,6 +19,6 @@ jobs:
          python P0_filter_NCHS_data.py
          git config user.name github-actions
          git config user.email github-actions@github.com
-	 git add NCHS_raw_datasets.csv
-	 git commit -m "GH Action: Adding NCHS_raw_datasets.csv"
-	 git push
+         git add NCHS_raw_datasets.csv
+         git commit -m "GH Action: Adding NCHS_raw_datasets.csv"
+         git push
