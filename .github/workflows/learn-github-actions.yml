@@ -15,5 +15,5 @@ jobs:
         run: pip install -r requirements.txt
       - name: Download metadata and filter for NCHS only datasets
         run: |
-	 wget https://data.cdc.gov/data.json
+         wget https://data.cdc.gov/data.json
          python P0_filter_NCHS_data.py
