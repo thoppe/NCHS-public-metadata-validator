@@ -33,3 +33,4 @@ idx = df["category"] == "NCHS"
 df = df[idx]
 
 df.to_csv("NCHS_raw_datasets.csv")
+print(df)
