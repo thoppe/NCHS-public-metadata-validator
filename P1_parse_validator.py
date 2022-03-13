@@ -62,3 +62,5 @@ for key in errors:
 # Create and save a dataframe
 errors = pd.DataFrame(data).set_index("data_json_order")
 errors.to_csv("NCHS_validiation_errors.csv")
+
+print(errors)

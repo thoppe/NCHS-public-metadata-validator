@@ -23,7 +23,7 @@ jobs:
          python P1_parse_validator.py
          git config user.name github-actions
          git config user.email github-actions@github.com
-         git add NCHS_raw_datasets.csv
-         git add NCHS_validiation_errors.csv
+         git add -f NCHS_raw_datasets.csv
+         git add -f NCHS_validiation_errors.csv
          git commit -m "GH Action: Adding raw and validation results"
          git push
