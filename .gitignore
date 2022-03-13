@@ -1,3 +1,11 @@
+# Files that should be automatically added
+NCHS_raw_datasets.csv
+NCHS_validiation_errors.csv
+
+# Temporary files
+data.json
+federal_validation.json
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -127,3 +135,6 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Temp files
+*~

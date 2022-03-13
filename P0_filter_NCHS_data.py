@@ -25,6 +25,9 @@ df = df.set_index("landingPage")
 # turn this into a single text field
 df["category"] = df["theme"].fillna(" ").apply(lambda x: x[0])
 
+# Keep the dataset order for validation against dashboard.data.gov
+df["data_json_order"] = range(len(df))
+
 # Only keep the datasets that belong to NCHS
 idx = df["category"] == "NCHS"
 df = df[idx]

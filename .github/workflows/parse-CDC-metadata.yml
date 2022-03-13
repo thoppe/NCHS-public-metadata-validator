@@ -1,4 +1,6 @@
-name: download-data-json
+# yamllint disable rule:line-length rule:document-start
+
+name: parse-CDC-metadata
 on: [push]
 jobs:
   parse-info:
@@ -17,8 +19,10 @@ jobs:
         run: |
          wget -nv https://data.cdc.gov/data.json
          python P0_filter_NCHS_data.py
+         curl "https://dashboard.data.gov/validate?schema=federal-v1.1&output=json&datajson_url=https%3A%2F%2Fdata.cdc.gov%2Fdata.json&qa=true" > federal_validation.json
          git config user.name github-actions
          git config user.email github-actions@github.com
          git add NCHS_raw_datasets.csv
-         git commit -m "GH Action: Adding NCHS_raw_datasets.csv"
+         git add NCHS_validiation_errors.csv
+         git commit -m "GH Action: Adding raw and validation results"
          git push
