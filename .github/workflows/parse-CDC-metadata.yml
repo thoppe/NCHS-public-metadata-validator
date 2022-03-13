@@ -1,8 +1,11 @@
 # yamllint disable rule:line-length rule:document-start
 
 name: parse-CDC-metadata
-on: [push]
-jobs:
+on:
+  push:
+  schedule:
+    -cron: "0 0 * * *"
+
   parse-info:
     runs-on: ubuntu-latest
     steps:
