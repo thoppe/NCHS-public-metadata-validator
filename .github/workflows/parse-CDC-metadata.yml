@@ -20,7 +20,7 @@ jobs:
          curl https://data.cdc.gov/data.json > data.json
          python P0_filter_NCHS_data.py
          curl "https://dashboard.data.gov/validate?schema=federal-v1.1&output=json&datajson_url=https%3A%2F%2Fdata.cdc.gov%2Fdata.json&qa=true" > federal_validation.json
-	 python P1_parse_validator.py
+         python P1_parse_validator.py
          git config user.name github-actions
          git config user.email github-actions@github.com
          git add NCHS_raw_datasets.csv
