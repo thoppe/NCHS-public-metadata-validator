@@ -1,12 +1,13 @@
 # yamllint disable rule:line-length rule:document-start
 
 name: parse-CDC-metadata
-on:
+'on':
   push:
     branches:
       - master
   schedule:
     - cron: "0 0 * * *"
+jobs:
   parse-info:
     runs-on: ubuntu-latest
     steps:
@@ -25,6 +26,8 @@ on:
          python P0_filter_NCHS_data.py
          curl --silent "https://dashboard.data.gov/validate?schema=federal-v1.1&output=json&datajson_url=https%3A%2F%2Fdata.cdc.gov%2Fdata.json&qa=true" > federal_validation.json
          python P1_parse_validator.py
+      - name: Commit the results to the repo
+        run: |
          git config user.name github-actions
          git config user.email github-actions@github.com
          git add -f NCHS_raw_datasets.csv
