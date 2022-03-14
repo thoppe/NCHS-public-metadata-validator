@@ -3,8 +3,6 @@
 name: parse-CDC-metadata
 'on':
   push:
-    branches:
-      - main
   schedule:
     - cron: "0 0 * * *"
 jobs:

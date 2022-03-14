@@ -10,11 +10,11 @@ Validates National Center for Health Statistics ([NCHS](https://www.cdc.gov/nchs
 ## Metadata Statistics
 
 
-+ Number of datasets on [data.cdc.gov](https://data.cdc.gov/): 844
-+ Number of NCHS datasets on [data.cdc.gov](https://data.cdc.gov/browse?category=NCHS): 134
-
-+ Number of CDC validation errors from the Federal Validator: 147
-+ Number of NCHS validation errors from the Federal Validator: 88
-+ Number of unique NCHS datasets with validation errors from the Federal Validator: 88
-
-+ Last Updated: 2022-03-14 08:53:10
+| Statistic | Value |
+| :---      | ---:  |
+| CDC datasets on [data.cdc.gov](https://data.cdc.gov/) | 844 |
+| CDC/NCHS datasets on [data.cdc.gov](https://data.cdc.gov/browse?category=NCHS)| **134** |
+| CDC validation errors from the Federal Validator | 147 |
+| CDC/NCHS validation errors from the Federal Validator | **88** |
+| Unique CDC/NCHS datasets with validation errors | **79** |
+| Last Updated | 2022-03-14 09:00:01 |
