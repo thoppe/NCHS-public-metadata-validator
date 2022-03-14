@@ -3,6 +3,12 @@
 name: parse-CDC-metadata
 'on':
   push:
+  workflow_dispatch:
+    inputs:
+      logMessage:
+        description: 'Log message'
+        required: true
+        default: 'Test automation'
   schedule:
     - cron: "0 0 * * *"
 jobs:
