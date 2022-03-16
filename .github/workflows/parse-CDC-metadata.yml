@@ -37,5 +37,6 @@ jobs:
          git config user.email github-actions@github.com
          git add -f NCHS_raw_datasets.csv
          git add -f NCHS_validiation_errors.csv
+         git add -f README.md
          git commit --allow-empty -m "GH Action: Update raw and validation results"
          git push
