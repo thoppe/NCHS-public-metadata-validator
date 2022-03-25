@@ -14,7 +14,7 @@ Validates National Center for Health Statistics ([NCHS](https://www.cdc.gov/nchs
 | :---      | ---:  |
 | CDC datasets on [data.cdc.gov](https://data.cdc.gov/) | 845 |
 | CDC/NCHS datasets on [data.cdc.gov](https://data.cdc.gov/browse?category=NCHS)| **135** |
-| CDC validation errors from the Federal Validator | 127 |
-| CDC/NCHS validation errors from the Federal Validator | **72** |
-| Unique CDC/NCHS datasets with validation errors | **59** |
-| Last Updated | 2022-03-24 00:16:17 |
+| CDC validation errors from the Federal Validator | 119 |
+| CDC/NCHS validation errors from the Federal Validator | **84** |
+| Unique CDC/NCHS datasets with validation errors | **51** |
+| Last Updated | 2022-03-25 00:16:45 |
