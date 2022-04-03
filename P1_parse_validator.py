@@ -60,7 +60,23 @@ for key in errors:
         )
 
 # Create and save a dataframe
-errors = pd.DataFrame(data).set_index("data_json_order")
+
+if data:
+    errors = pd.DataFrame(data)
+else:
+    # If there are no errors, create a mock dataframe
+    mock_cols = [
+        "data_json_order",
+        "field",
+        "value",
+        "identifier",
+        "title",
+        "validation_text",
+    ]
+    errors = pd.DataFrame(columns=mock_cols)
+
+errors = errors.set_index("data_json_order")
+
 errors.to_csv("NCHS_validiation_errors.csv")
 
 print(errors)
