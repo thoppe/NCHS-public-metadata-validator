@@ -52,7 +52,7 @@ for key in errors:
         value = info[name]
 
         # Use a custom string for a missing category
-        category = info["category"]
+        category = info["category"].strip()
         if not category:
             category = "BLANK"
 
@@ -91,6 +91,9 @@ errors = errors.set_index("data_json_order")
 
 # Show the errors for all CIOs
 print(errors.groupby("category").size().sort_values(ascending=False))
+
+# Save (for later consumption) all CDC errors
+errors.to_csv("CDC_validiation_errors.csv")
 
 # Save only NCHS errors
 errors = errors[errors["category"] == "NCHS"]

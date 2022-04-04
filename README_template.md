@@ -9,7 +9,6 @@ Validates National Center for Health Statistics ([NCHS](https://www.cdc.gov/nchs
 
 ## Metadata Statistics
 
-
 | Statistic | Value |
 | :---      | ---:  |
 | CDC datasets on [data.cdc.gov](https://data.cdc.gov/) | {n_CDC_datasets} |
@@ -18,3 +17,10 @@ Validates National Center for Health Statistics ([NCHS](https://www.cdc.gov/nchs
 | CDC/NCHS validation errors from the Federal Validator | **{n_NCHS_errors}** |
 | Unique CDC/NCHS datasets with validation errors | **{n_NCHS_error_datasets}** |
 | Last Updated | {data_last_updated} |
+
+
+## Remaining validation errors by category
+
+| Category | Count |
+| :---     | ---:  |
+{table_validation_errors}

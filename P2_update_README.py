@@ -12,7 +12,7 @@ f_README_template = Path("README_template.md")
 f_NCHS_errors_csv = Path("NCHS_validiation_errors.csv")
 f_NCHS_csv = Path("NCHS_raw_datasets.csv")
 f_CDC_json = Path("data.json")
-f_CDC_errors = Path("federal_validation.json")
+f_CDC_errors = Path("CDC_validiation_errors.csv")
 
 # Check to make sure these files exist before starting
 assert f_README_template.exists()
@@ -31,7 +31,8 @@ n_CDC_datasets = len(json.load(open(f_CDC_json))["dataset"])
 n_NCHS_datasets = len(pd.read_csv(f_NCHS_csv))
 
 # Count the number of total CDC errors in the validator
-n_CDC_errors = len(json.load(open(f_CDC_errors))["errors"])
+df_CDC = pd.read_csv(f_CDC_errors)
+n_CDC_errors = len(df_CDC)
 
 # Count the number of total CDC/NCHS errors in the validator
 df = pd.read_csv(f_NCHS_errors_csv)
@@ -43,6 +44,15 @@ n_NCHS_error_datasets = len(df["identifier"].unique())
 with open(f_README_template) as FIN:
     template = FIN.read()
 
+
+# Create a table with the remaining errors listed
+table_validation_errors = []
+counts = df_CDC.groupby("category").size().sort_values(ascending=False)
+for name, value in counts.iteritems():
+    row_text = f"|{name}|{value}|"
+    table_validation_errors.append(row_text)
+table_validation_errors = "\n".join(table_validation_errors)
+
 stats = {
     "n_CDC_datasets": n_CDC_datasets,
     "n_NCHS_datasets": n_NCHS_datasets,
@@ -50,6 +60,7 @@ stats = {
     "n_NCHS_errors": n_NCHS_errors,
     "n_NCHS_error_datasets": n_NCHS_error_datasets,
     "data_last_updated": datetime.now().isoformat(" ", "seconds"),
+    "table_validation_errors": table_validation_errors,
 }
 
 with open(f_README_output, "w") as FOUT:
