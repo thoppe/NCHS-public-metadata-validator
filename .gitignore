@@ -5,6 +5,7 @@ NCHS_validiation_errors.csv
 # Temporary files
 data.json
 federal_validation.json
+CDC_raw_datasets.csv
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

@@ -1,8 +1,8 @@
 """
-Cross reference the data from the Federal Validator (FV):
+Cross-reference the data from the Federal Validator (FV):
 https://dashboard.data.gov/validate
 
-Against the Socrata output from data.json. FV returns results based
+against the Socrata output from data.json. FV returns results based
 off of numerical order from data.json, need to cross-reference and return
 only NCHS results in a nice CSV. Program outputs results to CSV:
 NCHS_validiation_errors.csv
@@ -14,7 +14,7 @@ import pandas as pd
 
 # Presume NCHS_raw_datasets.csv exists already
 # (computed from P0_filter_NCHS_data.py)
-f_csv = Path("NCHS_raw_datasets.csv")
+f_csv = Path("CDC_raw_datasets.csv")
 assert f_csv.exists()
 df = pd.read_csv(f_csv).set_index("data_json_order")
 
@@ -24,15 +24,14 @@ assert f_validation.exists()
 JS = json.load(open(f_validation))
 errors = JS["errors"]
 
-
 # Parse the JSON file and keep only the datasets from NCHS
 data = []
 for key in errors:
 
     # federal_validation.json stores as string
     # If the key is not in the df then it's not NCHS
-    if int(key) not in df.index.values:
-        continue
+    # if int(key) not in df.index.values:
+    #    continue
 
     for name in errors[key]:
 
@@ -47,14 +46,25 @@ for key in errors:
 
         info = df.loc[int(key)]
 
+        # contactPoint is stored as contactPoint.hasEmail
+        if ".hasEmail" in name:
+            name = name.replace(".hasEmail", "")
+        value = info[name]
+
+        # Use a custom string for a missing category
+        category = info["category"]
+        if not category:
+            category = "BLANK"
+
         # Build the output columns
         data.append(
             {
                 "data_json_order": key,
                 "field": name,
-                "value": info[name],
+                "value": value,
                 "identifier": info["identifier"],
                 "title": info["title"],
+                "category": category,
                 "validation_text": text,
             }
         )
@@ -71,12 +81,17 @@ else:
         "value",
         "identifier",
         "title",
+        "category",
         "validation_text",
     ]
     errors = pd.DataFrame(columns=mock_cols)
 
+# Align the index to the order returned by the FV
 errors = errors.set_index("data_json_order")
 
-errors.to_csv("NCHS_validiation_errors.csv")
+# Show the errors for all CIOs
+print(errors.groupby("category").size().sort_values(ascending=False))
 
-print(errors)
+# Save only NCHS errors
+errors = errors[errors["category"] == "NCHS"]
+errors.to_csv("NCHS_validiation_errors.csv")

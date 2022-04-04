@@ -1,5 +1,5 @@
 """
-Updates the README when the github action is run to account for the 
+Updates the README when the github action is run to account for the
 current stats. Uses "README_template.md" to build "README.md".
 """
 

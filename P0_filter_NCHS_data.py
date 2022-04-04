@@ -1,7 +1,10 @@
 """
 Filters metadata from data.cdc.gov so only NCHS datasets remain,
-returns a nicely formated CSV. Saves the dataframe to a file for
-future analysis.
+returns a nicely formated CSV.
+
+Saves two dataframes to a file for future analysis before and after the filter:
+    + CDC_raw_datasets.csv
+    + NCHS_raw_datasets.csv
 """
 
 import json
@@ -28,9 +31,11 @@ df["category"] = df["theme"].fillna(" ").apply(lambda x: x[0])
 # Keep the dataset order for validation against dashboard.data.gov
 df["data_json_order"] = range(len(df))
 
+# Save a full copy of CDC's datasets
+df.to_csv("CDC_raw_datasets.csv")
+
 # Only keep the datasets that belong to NCHS
 idx = df["category"] == "NCHS"
 df = df[idx]
-
 df.to_csv("NCHS_raw_datasets.csv")
 print(df)
