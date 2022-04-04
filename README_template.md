@@ -19,7 +19,7 @@ Validates National Center for Health Statistics ([NCHS](https://www.cdc.gov/nchs
 | Last Updated | {data_last_updated} |
 
 
-## Remaining validation errors by category
+## Remaining {n_CDC_errors} validation errors by category
 
 | Category | Count |
 | :---     | ---:  |
