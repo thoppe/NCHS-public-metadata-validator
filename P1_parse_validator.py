@@ -22,7 +22,12 @@ df = pd.read_csv(f_csv).set_index("data_json_order")
 f_validation = Path("federal_validation.json")
 assert f_validation.exists()
 JS = json.load(open(f_validation))
-errors = JS["errors"]
+
+# If there are no errors, return an empty list
+if "errors" in JS:
+    errors = JS["errors"]
+else:
+    errors = []
 
 # Parse the JSON file and keep only the datasets from NCHS
 data = []
