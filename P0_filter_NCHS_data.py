@@ -37,5 +37,10 @@ df.to_csv("CDC_raw_datasets.csv")
 # Only keep the datasets that belong to NCHS
 idx = df["category"] == "NCHS"
 df = df[idx]
+
+# Only keep the public datasets (ignore the restricted access set)
+idx = df["accessLevel"] == "public"
+df = df[idx]
+
 df.to_csv("NCHS_raw_datasets.csv")
 print(df)

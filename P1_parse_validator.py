@@ -18,6 +18,9 @@ f_csv = Path("CDC_raw_datasets.csv")
 assert f_csv.exists()
 df = pd.read_csv(f_csv).set_index("data_json_order")
 
+# Only report on datasets that are public
+df = df[df["accessLevel"] == "public"]
+
 # Load the validation file and check if it exists
 f_validation = Path("federal_validation.json")
 assert f_validation.exists()
@@ -34,9 +37,10 @@ data = []
 for key in errors:
 
     # federal_validation.json stores as string
-    # If the key is not in the df then it's not NCHS
-    # if int(key) not in df.index.values:
-    #    continue
+    # If the key is not in the df then it is not public
+    
+    if int(key) not in df.index.values:
+        continue
 
     for name in errors[key]:
 
@@ -48,7 +52,6 @@ for key in errors:
         for row in item:
             text.extend(item[row])
         text = "; ".join(text)
-
         info = df.loc[int(key)]
 
         # contactPoint is stored as contactPoint.hasEmail

@@ -65,3 +65,5 @@ stats = {
 
 with open(f_README_output, "w") as FOUT:
     FOUT.write(template.format(**stats))
+
+print(stats)
