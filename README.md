@@ -13,13 +13,13 @@ Validates National Center for Health Statistics ([NCHS](https://www.cdc.gov/nchs
 | :---      | ---:  |
 | CDC datasets on [data.cdc.gov](https://data.cdc.gov/) | 882 |
 | CDC/NCHS datasets on [data.cdc.gov](https://data.cdc.gov/browse?category=NCHS)| **138** |
-| CDC validation errors from the Federal Validator | 147 |
-| CDC/NCHS validation errors from the Federal Validator | **2** |
-| Unique CDC/NCHS datasets with validation errors | **2** |
-| Last Updated | 2022-08-25 00:24:41 |
+| CDC validation errors from the Federal Validator | 146 |
+| CDC/NCHS validation errors from the Federal Validator | **1** |
+| Unique CDC/NCHS datasets with validation errors | **1** |
+| Last Updated | 2022-08-26 00:23:21 |
 
 
-## Remaining 147 validation errors by category
+## Remaining 146 validation errors by category
 
 | Category | Count |
 | :---     | ---:  |
@@ -35,10 +35,10 @@ Validates National Center for Health Statistics ([NCHS](https://www.cdc.gov/nchs
 |Laboratory Surveillance|4|
 |Environmental Health & Toxicology|4|
 |Pregnancy & Vaccination|3|
-|NCHS|2|
 |Foodborne, Waterborne, and Related Diseases|2|
 |Tobacco Use|2|
 |Child Vaccinations|2|
+|NCHS|1|
 |Disability & Health|1|
 |Vision & Eye Health|1|
 |Youth Risk Behaviors|1|
