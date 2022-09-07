@@ -11,15 +11,15 @@ Validates National Center for Health Statistics ([NCHS](https://www.cdc.gov/nchs
 
 | Statistic | Value |
 | :---      | ---:  |
-| CDC datasets on [data.cdc.gov](https://data.cdc.gov/) | 884 |
-| CDC/NCHS datasets on [data.cdc.gov](https://data.cdc.gov/browse?category=NCHS)| **140** |
-| CDC validation errors from the Federal Validator | 147 |
-| CDC/NCHS validation errors from the Federal Validator | **2** |
-| Unique CDC/NCHS datasets with validation errors | **2** |
-| Last Updated | 2022-09-06 00:24:15 |
+| CDC datasets on [data.cdc.gov](https://data.cdc.gov/) | 885 |
+| CDC/NCHS datasets on [data.cdc.gov](https://data.cdc.gov/browse?category=NCHS)| **141** |
+| CDC validation errors from the Federal Validator | 148 |
+| CDC/NCHS validation errors from the Federal Validator | **3** |
+| Unique CDC/NCHS datasets with validation errors | **3** |
+| Last Updated | 2022-09-07 00:24:11 |
 
 
-## Remaining 147 validation errors by category
+## Remaining 148 validation errors by category
 
 | Category | Count |
 | :---     | ---:  |
@@ -34,8 +34,8 @@ Validates National Center for Health Statistics ([NCHS](https://www.cdc.gov/nchs
 |NNDSS|4|
 |Laboratory Surveillance|4|
 |Environmental Health & Toxicology|4|
+|NCHS|3|
 |Pregnancy & Vaccination|3|
-|NCHS|2|
 |Foodborne, Waterborne, and Related Diseases|2|
 |Tobacco Use|2|
 |Child Vaccinations|2|
