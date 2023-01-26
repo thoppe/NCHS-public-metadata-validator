@@ -11,19 +11,19 @@ Validates National Center for Health Statistics ([NCHS](https://www.cdc.gov/nchs
 
 | Statistic | Value |
 | :---      | ---:  |
-| CDC datasets on [data.cdc.gov](https://data.cdc.gov/) | 934 |
+| CDC datasets on [data.cdc.gov](https://data.cdc.gov/) | 935 |
 | CDC/NCHS datasets on [data.cdc.gov](https://data.cdc.gov/browse?category=NCHS)| **144** |
-| CDC validation errors from the Federal Validator | 203 |
+| CDC validation errors from the Federal Validator | 204 |
 | CDC/NCHS validation errors from the Federal Validator | **5** |
 | Unique CDC/NCHS datasets with validation errors | **3** |
-| Last Updated | 2023-01-25 00:20:59 |
+| Last Updated | 2023-01-26 00:20:17 |
 
 
-## Remaining 203 validation errors by category
+## Remaining 204 validation errors by category
 
 | Category | Count |
 | :---     | ---:  |
-|BLANK|75|
+|BLANK|76|
 |Vaccinations|38|
 |Public Health Surveillance|25|
 |Case Surveillance|10|
