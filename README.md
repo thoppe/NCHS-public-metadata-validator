@@ -13,13 +13,13 @@ Validates National Center for Health Statistics ([NCHS](https://www.cdc.gov/nchs
 | :---      | ---:  |
 | CDC datasets on [data.cdc.gov](https://data.cdc.gov/) | 935 |
 | CDC/NCHS datasets on [data.cdc.gov](https://data.cdc.gov/browse?category=NCHS)| **144** |
-| CDC validation errors from the Federal Validator | 204 |
-| CDC/NCHS validation errors from the Federal Validator | **5** |
-| Unique CDC/NCHS datasets with validation errors | **3** |
-| Last Updated | 2023-01-26 00:20:17 |
+| CDC validation errors from the Federal Validator | 205 |
+| CDC/NCHS validation errors from the Federal Validator | **6** |
+| Unique CDC/NCHS datasets with validation errors | **4** |
+| Last Updated | 2023-01-27 00:21:28 |
 
 
-## Remaining 204 validation errors by category
+## Remaining 205 validation errors by category
 
 | Category | Count |
 | :---     | ---:  |
@@ -29,8 +29,8 @@ Validates National Center for Health Statistics ([NCHS](https://www.cdc.gov/nchs
 |Case Surveillance|10|
 |Administrative|6|
 |Environmental Health & Toxicology|6|
+|NCHS|6|
 |Health Statistics|5|
-|NCHS|5|
 |Laboratory Surveillance|5|
 |Global Health|5|
 |Foodborne, Waterborne, and Related Diseases|5|
