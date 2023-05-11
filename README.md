@@ -11,12 +11,12 @@ Validates National Center for Health Statistics ([NCHS](https://www.cdc.gov/nchs
 
 | Statistic | Value |
 | :---      | ---:  |
-| CDC datasets on [data.cdc.gov](https://data.cdc.gov/) | 956 |
-| CDC/NCHS datasets on [data.cdc.gov](https://data.cdc.gov/browse?category=NCHS)| **151** |
+| CDC datasets on [data.cdc.gov](https://data.cdc.gov/) | 957 |
+| CDC/NCHS datasets on [data.cdc.gov](https://data.cdc.gov/browse?category=NCHS)| **152** |
 | CDC validation errors from the Federal Validator | 218 |
 | CDC/NCHS validation errors from the Federal Validator | **8** |
 | Unique CDC/NCHS datasets with validation errors | **6** |
-| Last Updated | 2023-05-10 00:18:50 |
+| Last Updated | 2023-05-11 00:18:55 |
 
 
 ## Remaining 218 validation errors by category
